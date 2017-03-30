@@ -13,8 +13,8 @@ cd Python-3.5.2
 # Use /opt/python{X}.{Y} for the prefix.
 ./configure --prefix=/opt/python3.5 --with-lto
 # Explicitly build the profile-guided-optimized interpreter
-make profile-opt
-make altinstall
+make -j$(nproc) profile-opt
+make -j$(nproc) altinstall
 
 # Clean-up sources
 rm /opt/sources/Python-3.5.2.tgz
